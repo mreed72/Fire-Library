@@ -1,0 +1,9 @@
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\bin\Debug\xmod-fires.dll
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\bin\Debug\xmod-fires.pdb
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\bin\Debug\xmod-fires.xml
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod_fires.Resources.resources
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.vbproj.GenerateResource.cache
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.vbproj.CoreCompileInputs.cache
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.dll
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.xml
+C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.pdb

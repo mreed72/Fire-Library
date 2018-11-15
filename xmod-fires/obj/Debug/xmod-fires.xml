@@ -1,0 +1,81 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+xmod-fires
+</name>
+</assembly>
+<members>
+<member name="T:xmod_fires.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:xmod_fires.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:xmod_fires.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:xmod_fires.Class1.ChkLocations(System.String)">
+ <summary>
+ Check Log File Locations
+ </summary>
+ <param name="DirName">STRING: the directory location.</param>
+ <returns>NA</returns>
+</member>
+<member name="M:xmod_fires.Class1.grs(System.Int32@)">
+ <summary>
+ Generate random string of Characters
+ </summary>
+ <param name="length">INTEGER: length of characters to generate</param>
+ <returns>Generate random string of Characters</returns>
+</member>
+<member name="M:xmod_fires.Class1.TDGV(System.Windows.Forms.DataGridView,System.Int32)">
+ <summary>
+ Total values from a datagrid
+ </summary>
+ <param name="xDG">Name of Datagrid</param>
+ <param name="xCelIndx">Cell Index value (Integer)</param>
+ <returns>the total value of all the results in a datagrid column.</returns>
+</member>
+<member name="M:xmod_fires.Class1.ELog(System.String,System.String,System.String)">
+ <summary>
+ Writes to log file.
+ </summary>
+ <param name="code">Unique ID</param>
+ <param name="msg">Message</param>
+ <param name="loc">Directory and File location (ex: "c:\TEST\test.txt")</param>
+ <returns>T or F</returns>
+</member>
+<member name="M:xmod_fires.FuelCalc.smpCalc(System.Int32@,System.Double@)">
+ <summary>
+ Main Smoke Guidelines Calculation Code
+ </summary>
+ <param name="xCatDay">INTEGER: 1-5, Category Day</param>
+ <param name="xDistance">DOUBLE: Distance to Target</param>
+ <returns>INTEGER: represents the total tons allowed for an airshed.</returns>
+</member>
+<member name="M:xmod_fires.FuelCalc.GetAvFuels(System.String,System.String)">
+ <summary>
+ Available Fuels
+ </summary>
+ <param name="cTypx">Fuel Type</param>
+ <param name="cLoad">Fuel Load</param>
+ <returns>DOUBLE: value represents the available fuels for a burn.</returns>
+</member>
+<member name="M:xmod_fires.FuelCalc.LVORI(System.Int32,System.Int32)">
+ <summary>
+ Low Visibility Occurence Risk Index
+ </summary>
+ <param name="xRelativeHumidity">Relative Humidity</param>
+ <param name="xDispersionIndex">Dispersion Index</param>
+ <returns>INTEGER: 1-10 that depicts the LVORI value.</returns>
+</member>
+</members>
+</doc>
