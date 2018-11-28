@@ -87,7 +87,31 @@ Public Class Class1
         End Try
     End Function
 
+    ''' <summary>
+    ''' Grab a random word from a text file.
+    ''' </summary>
+    ''' <param name="x4">Location of the text file</param>
+    ''' <returns>random word from a text file.</returns>
+    Function getword(x4 As String)
+        Randomize()
 
+        Dim sr As System.IO.StreamReader
+        Dim ri As Integer = 0
+        Dim wa As New ArrayList
+
+        If System.IO.File.Exists(x4) = True Then 'x4 is location of text file
+            sr = New IO.StreamReader(x4)
+
+            Do While sr.Peek > -1
+                wa.Add(sr.ReadLine)
+            Loop
+            ri = CInt((wa.Count - 1) * Rnd())
+            Return wa(ri) 'The random word, use as needed.
+            sr.Close()
+        Else
+            sr.Close()
+        End If
+    End Function
 
 End Class
 

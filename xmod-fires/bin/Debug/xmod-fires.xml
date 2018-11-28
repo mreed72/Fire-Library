@@ -53,6 +53,13 @@ xmod-fires
  <param name="loc">Directory and File location (ex: "c:\TEST\test.txt")</param>
  <returns>T or F</returns>
 </member>
+<member name="M:xmod_fires.Class1.getword(System.String)">
+ <summary>
+ Grab a random word from a text file.
+ </summary>
+ <param name="x4">Location of the text file</param>
+ <returns>random word from a text file.</returns>
+</member>
 <member name="M:xmod_fires.FuelCalc.smpCalc(System.Int32@,System.Double@)">
  <summary>
  Main Smoke Guidelines Calculation Code
