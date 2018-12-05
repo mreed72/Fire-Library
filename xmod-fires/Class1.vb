@@ -72,7 +72,7 @@ Public Class Class1
     ''' <param name="msg">Message</param>
     ''' <param name="loc">Directory and File location (ex: "c:\TEST\test.txt")</param>
     ''' <returns>T or F</returns>
-    Function ELog(code As String, msg As String, loc As String) As Boolean
+    Public Function ELog(code As String, msg As String, loc As String) As Boolean
         Try
             Dim dt As DateTime = Date.Now
             Dim Final As String
@@ -92,7 +92,7 @@ Public Class Class1
     ''' </summary>
     ''' <param name="x4">Location of the text file</param>
     ''' <returns>random word from a text file.</returns>
-    Function getword(x4 As String)
+    Public Function getword(x4 As String)
         Randomize()
 
         Dim sr As System.IO.StreamReader
@@ -112,6 +112,64 @@ Public Class Class1
             sr.Close()
         End If
     End Function
+
+    ''' <summary>
+    ''' Converts county name to AFC district
+    ''' </summary>
+    ''' <param name="cnty">County Name (without county. ex:  ASHLEY   /   not ASHLEY COUNTY)</param>
+    ''' <returns>INTEGER that represents the AFC district 1-8  if zero(0) then error</returns>
+    Public Function CountyToDistrict(cnty As String)
+        Select Case cnty
+            Case "Ashley" Or "Bradley" Or "Calhoun" Or "Cleveland" Or "Drew" Or "Lincoln" Or "Desha" Or "Chicot"
+                Return 1
+            Case "Calhoun" Or "Union" Or "Columbia" Or "Ouachita" Or "Nevada" Or "Lafayette" Or "Hempstead" Or "Miller"
+                Return 4
+            Case "Little River" Or "Howard" Or "Sevier" Or "Pike" Or "Polk" Or "Montgomery" Or "Scott" Or "Yell"
+                Return 2
+            Case "Benton" Or "Carroll" Or "Boone" Or "Washington" Or "Madison" Or "Newton" Or "Crawford" Or "Franklin" Or "Johnson" Or "Pope" Or "Sebastian" Or "Logan"
+                Return 6
+            Case "Pulaski" Or "Perry" Or "Faulkner" Or "White" Or "Conway" Or "Van Buren" Or "Cleburne"
+                Return 7
+            Case "Baxter" Or "Marion" Or "Searcy" Or "Stone" Or "Fulton" Or "Izard" Or "Sharp" Or "Randolph" Or "Lawrence" Or "Independence"
+                Return 8
+            Case "Clay" Or "Greene" Or "Craighead" Or "Mississippi" Or "Jackson" Or "Poinsett" Or "Crittenden" Or "Cross" Or "Woodruff" Or "St Francis" Or "Lee" Or "Phillips" Or "Monroe" Or "Arkansas" Or "Prairie" Or "Lonoke"
+                Return 3
+            Case Else
+                Return 0
+        End Select
+    End Function
+
+    ''' <summary>
+    ''' State Cause Codes converted to Federal Cause Codes
+    ''' </summary>
+    ''' <param name="StateCode">State Cause Code INTEGER</param>
+    ''' <returns>Federal Cause Code INTEGER</returns>
+    Public Function CauseCodeCrossWalk(StateCode As Integer) As Integer
+        Select Case StateCode
+            Case 1
+                Return 7
+            Case 2
+                Return 5
+            Case 3
+                Return 3
+            Case 4
+                Return 6
+            Case 5
+                Return 4
+            Case 6
+                Return 2
+            Case 7
+                Return 8
+            Case 8
+                Return 1
+            Case 9
+                Return 9
+            Case Else
+                Return 0
+        End Select
+    End Function
+
+
 
 End Class
 
@@ -534,3 +592,61 @@ Public Class FuelCalc
 End Class
 
 
+Public Class BETA
+    Public Function cypt()
+
+        Dim a1, a2 As Integer
+        Dim va, vb, vc, vd, ve As Integer
+        Do Until Val(va) + Val(vb) + Val(vc) + Val(vd) + Val(ve) = 10
+            va = CInt(Int((9 * Rnd()) + 1))
+            vb = CInt(Int((9 * Rnd()) + 1))
+            vc = CInt(Int((9 * Rnd()) + 1))
+            vd = CInt(Int((9 * Rnd()) + 1))
+            ve = CInt(Int((9 * Rnd()) + 1))
+
+            a1 = va & vb & vc & vd & ve
+        Loop
+
+        Dim v1, v2, v3, v4, v5 As Integer
+        Do Until Val(v1) + Val(v2) + Val(v3) + Val(v4) + Val(v5) = 15
+            v1 = CInt(Int((9 * Rnd()) + 1))
+            v2 = CInt(Int((9 * Rnd()) + 1))
+            v3 = CInt(Int((9 * Rnd()) + 1))
+            v4 = CInt(Int((9 * Rnd()) + 1))
+            v5 = CInt(Int((9 * Rnd()) + 1))
+
+            a2 = v1 & v2 & v3 & v4 & v5
+        Loop
+
+        Return a1 & "-" & a2 & "-" & grs(5)
+    End Function
+
+    Public Function grs(ByRef length As Integer) As String
+        Randomize()
+        Dim ac As String
+        ac = "123456789"
+        Dim i As Integer
+        For i = 1 To length
+            grs = grs & Mid(ac, Int(Rnd() * Len(ac) + 1), 1)
+        Next
+    End Function
+
+
+    Public Function Dcypt(rkey As String)
+        Dim total As Integer
+        Dim num() As String
+        num = Split(rkey, "-")
+        total = 0
+        For Each n In num
+            total = total + Val(num)
+        Next
+        Return total
+    End Function
+
+
+
+
+
+
+
+End Class
