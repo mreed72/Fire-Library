@@ -116,27 +116,33 @@ Public Class Class1
     ''' <summary>
     ''' Converts county name to AFC district
     ''' </summary>
-    ''' <param name="cnty">County Name (without county. ex:  ASHLEY   /   not ASHLEY COUNTY)</param>
+    ''' <param name="StringLocation">Location of the string to search for county name(ex. textbox.text contains "Cleburne")</param>
     ''' <returns>INTEGER that represents the AFC district 1-8  if zero(0) then error</returns>
-    Public Function CountyToDistrict(cnty As String)
-        Select Case cnty
-            Case "Ashley" Or "Bradley" Or "Calhoun" Or "Cleveland" Or "Drew" Or "Lincoln" Or "Desha" Or "Chicot"
-                Return 1
-            Case "Calhoun" Or "Union" Or "Columbia" Or "Ouachita" Or "Nevada" Or "Lafayette" Or "Hempstead" Or "Miller"
-                Return 4
-            Case "Little River" Or "Howard" Or "Sevier" Or "Pike" Or "Polk" Or "Montgomery" Or "Scott" Or "Yell"
-                Return 2
-            Case "Benton" Or "Carroll" Or "Boone" Or "Washington" Or "Madison" Or "Newton" Or "Crawford" Or "Franklin" Or "Johnson" Or "Pope" Or "Sebastian" Or "Logan"
-                Return 6
-            Case "Pulaski" Or "Perry" Or "Faulkner" Or "White" Or "Conway" Or "Van Buren" Or "Cleburne"
-                Return 7
-            Case "Baxter" Or "Marion" Or "Searcy" Or "Stone" Or "Fulton" Or "Izard" Or "Sharp" Or "Randolph" Or "Lawrence" Or "Independence"
-                Return 8
-            Case "Clay" Or "Greene" Or "Craighead" Or "Mississippi" Or "Jackson" Or "Poinsett" Or "Crittenden" Or "Cross" Or "Woodruff" Or "St Francis" Or "Lee" Or "Phillips" Or "Monroe" Or "Arkansas" Or "Prairie" Or "Lonoke"
-                Return 3
-            Case Else
-                Return 0
-        End Select
+    Public Function CountyToDistrict(StringLocation As String)
+
+        Dim cnt As String = StringLocation
+
+        If cnt.Contains("Ashley") Or cnt.Contains("Bradley") Or cnt.Contains("Calhoun") Or cnt.Contains("Chicot") Or cnt.Contains("Cleveland") Or cnt.Contains("Desha") Or cnt.Contains("Drew") Or cnt.Contains("Jefferson") Or cnt.Contains("Lincoln") Then
+            Return 1
+        ElseIf cnt.Contains("Howard") Or cnt.Contains("Little River") Or cnt.Contains("Montgomery") Or cnt.Contains("Pike") Or cnt.Contains("Polk") Or cnt.Contains("Scott") Or cnt.Contains("Sevier") Or cnt.Contains("Yell") Then
+            Return 2
+        ElseIf cnt.Contains("Arkansas") Or cnt.Contains("Clay") Or cnt.Contains("Craighead") Or cnt.Contains("Crittenden") Or cnt.Contains("Cross") Or cnt.Contains("Greene") Or cnt.Contains("Jackson") Or cnt.Contains("Lee") Or cnt.Contains("Lonoke") Or cnt.Contains("Mississippi") Or cnt.Contains("Monroe") Or cnt.Contains("Phillips") Or cnt.Contains("Poinsett") Or cnt.Contains("Prairie") Or cnt.Contains("St Francis") Or cnt.Contains("Woodruff") Then
+            Return 3
+        ElseIf cnt.Contains("Columbia") Or cnt.Contains("Hempstead") Or cnt.Contains("Lafayette") Or cnt.Contains("Miller") Or cnt.Contains("Nevada") Or cnt.Contains("Ouachita") Or cnt.Contains("Union") Then
+            Return 4
+        ElseIf cnt.Contains("Clark") Or cnt.Contains("Dallas") Or cnt.Contains("Garland") Or cnt.Contains("Grant") Or cnt.Contains("Hot Spring") Or cnt.Contains("Saline") Then
+            Return 5
+        ElseIf cnt.Contains("Benton") Or cnt.Contains("Boone") Or cnt.Contains("Carroll") Or cnt.Contains("Crawford") Or cnt.Contains("Franklin") Or cnt.Contains("Johnson") Or cnt.Contains("Logan") Or cnt.Contains("Madison") Or cnt.Contains("Newton") Or cnt.Contains("Pope") Or cnt.Contains("Sebastian") Or cnt.Contains("Washington") Then
+            Return 6
+        ElseIf cnt.Contains("Cleburne") Or cnt.Contains("Conway") Or cnt.Contains("Faulkner") Or cnt.Contains("Perry") Or cnt.Contains("Pulaski") Or cnt.Contains("Van Buren") Or cnt.Contains("White") Then
+            Return 7
+        ElseIf cnt.Contains("Baxter") Or cnt.Contains("Fulton") Or cnt.Contains("Independence") Or cnt.Contains("Izard") Or cnt.Contains("Lawrence") Or cnt.Contains("Marion") Or cnt.Contains("Randolph") Or cnt.Contains("Searcy") Or cnt.Contains("Sharp") Or cnt.Contains("Stone") Then
+            Return 8
+        Else
+            Return 0
+        End If
+
+
     End Function
 
     ''' <summary>
