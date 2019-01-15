@@ -60,6 +60,37 @@ xmod-fires
  <param name="x4">Location of the text file</param>
  <returns>random word from a text file.</returns>
 </member>
+<member name="M:xmod_fires.Class1.CountyToDistrict(System.String)">
+ <summary>
+ Converts county name to AFC district
+ </summary>
+ <param name="StringLocation">Location of the string to search for county name(ex. textbox.text contains "Cleburne")</param>
+ <returns>INTEGER that represents the AFC district 1-8  if zero(0) then error</returns>
+</member>
+<member name="M:xmod_fires.Class1.CauseCodeCrossWalk(System.Int32)">
+ <summary>
+ State Cause Codes converted to Federal Cause Codes
+ </summary>
+ <param name="StateCode">State Cause Code INTEGER</param>
+ <returns>Federal Cause Code INTEGER</returns>
+</member>
+<member name="M:xmod_fires.Class1.GetMyKey(System.String,System.String)">
+ <summary>
+ Gets a KEY VALUE from the registry (HKEY_CURRENT_USER) \ subkey \ keysub \ value
+ </summary>
+ <param name="keySub"></param>
+ <param name="keyValue"></param>
+ <returns>KEY VALUE</returns>
+</member>
+<member name="M:xmod_fires.Class1.SetMyKey(System.String,System.String,System.String)">
+ <summary>
+ Sets a KEY VALUE for the registry (HKEY_CURRENT_USER) \ subkey \ keysub \ value
+ </summary>
+ <param name="subKey"></param>
+ <param name="keySub"></param>
+ <param name="keyValue"></param>
+ <returns></returns>
+</member>
 <member name="M:xmod_fires.FuelCalc.smpCalc(System.Int32@,System.Double@)">
  <summary>
  Main Smoke Guidelines Calculation Code

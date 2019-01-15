@@ -175,7 +175,29 @@ Public Class Class1
         End Select
     End Function
 
+    ''' <summary>
+    ''' Gets a KEY VALUE from the registry (HKEY_CURRENT_USER) \ subkey \ keysub \ value
+    ''' </summary>
+    ''' <param name="keySub"></param>
+    ''' <param name="keyValue"></param>
+    ''' <returns>KEY VALUE</returns>
+    Public Function GetMyKey(keySub As String, keyValue As String)
+        Dim readValue As String
+        readValue = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\" & keySub, keyValue, Nothing)
+        Return readValue
+    End Function
 
+    ''' <summary>
+    ''' Sets a KEY VALUE for the registry (HKEY_CURRENT_USER) \ subkey \ keysub \ value
+    ''' </summary>
+    ''' <param name="subKey"></param>
+    ''' <param name="keySub"></param>
+    ''' <param name="keyValue"></param>
+    ''' <returns></returns>
+    Public Function SetMyKey(subKey As String, keySub As String, keyValue As String)
+        My.Computer.Registry.CurrentUser.CreateSubKey(subKey)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\" & subKey, keySub, keyValue)
+    End Function
 
 End Class
 
