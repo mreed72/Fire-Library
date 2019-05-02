@@ -90,17 +90,17 @@ Public Class Class1
     ''' <summary>
     ''' Grab a random word from a text file.
     ''' </summary>
-    ''' <param name="x4">Location of the text file</param>
+    ''' <param name="FileLocation">Location of the text file</param>
     ''' <returns>random word from a text file.</returns>
-    Public Function getword(x4 As String)
+    Public Function getword(FileLocation As String)
         Randomize()
 
         Dim sr As System.IO.StreamReader
         Dim ri As Integer = 0
         Dim wa As New ArrayList
 
-        If System.IO.File.Exists(x4) = True Then 'x4 is location of text file
-            sr = New IO.StreamReader(x4)
+        If System.IO.File.Exists(FileLocation) = True Then 'x4 is location of text file
+            sr = New IO.StreamReader(FileLocation)
 
             Do While sr.Peek > -1
                 wa.Add(sr.ReadLine)
@@ -228,7 +228,7 @@ Public Class FuelCalc
                     Case > 20
                         Return 2880
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 3
                 Select Case xDistance
@@ -243,7 +243,7 @@ Public Class FuelCalc
                     Case > 20
                         Return 3280
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 4
                 Select Case xDistance
@@ -258,7 +258,7 @@ Public Class FuelCalc
                     Case > 20
                         Return 6400
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 5
                 Select Case xDistance
@@ -273,7 +273,7 @@ Public Class FuelCalc
                     Case > 20
                         Return 11600
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case Else
                 Return 0
@@ -297,7 +297,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 4.4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Shortleaf Pine Regeneration"
                 Select Case cLoad
@@ -308,7 +308,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 5.1
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Loblolly Pine with Oak"
                 Select Case cLoad
@@ -319,7 +319,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 7.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Loblolly Pine Regeneration"
                 Select Case cLoad
@@ -330,7 +330,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 8.5
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Hardwood Leaf Litter"
                 Select Case cLoad
@@ -341,7 +341,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 2.5
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Grass or Brush"
                 Select Case cLoad
@@ -352,7 +352,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 5.0
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Dispersed Slash"
                 Select Case cLoad
@@ -363,7 +363,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 8.0
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Piled Debris"
                 Select Case cLoad
@@ -374,7 +374,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 10.0
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Shortleaf Loblolly with Grass"
                 Select Case cLoad
@@ -385,7 +385,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 5.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Corn"
                 Select Case cLoad
@@ -396,7 +396,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 6.2
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Cotton"
                 Select Case cLoad
@@ -407,7 +407,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 1.5
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Rice"
                 Select Case cLoad
@@ -418,7 +418,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 4.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Soybean"
                 Select Case cLoad
@@ -429,7 +429,7 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 5.7
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case "Wheat"
                 Select Case cLoad
@@ -440,10 +440,10 @@ Public Class FuelCalc
                     Case Is = "Heavy"
                         Return 1.9
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case Else
-                Return 0
+                Exit Select
         End Select
     End Function
 
@@ -462,7 +462,7 @@ Public Class FuelCalc
                     Case Is > 30
                         Return 1
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 56 To 59
                 Select Case xDispersionIndex
@@ -473,7 +473,7 @@ Public Class FuelCalc
                     Case Is > 31
                         Return 1
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 60 To 64
                 Select Case xDispersionIndex
@@ -484,7 +484,7 @@ Public Class FuelCalc
                     Case Is > 31
                         Return 1
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 65 To 69
                 Select Case xDispersionIndex
@@ -495,7 +495,7 @@ Public Class FuelCalc
                     Case Is > 41
                         Return 1
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 70 To 74
                 Select Case xDispersionIndex
@@ -504,7 +504,7 @@ Public Class FuelCalc
                     Case Is > 2
                         Return 3
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 75 To 79
                 Select Case xDispersionIndex
@@ -513,7 +513,7 @@ Public Class FuelCalc
                     Case Is > 17
                         Return 3
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 80 To 82
                 Select Case xDispersionIndex
@@ -526,7 +526,7 @@ Public Class FuelCalc
                     Case Is > 17
                         Return 3
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 83 To 85
                 Select Case xDispersionIndex
@@ -537,7 +537,7 @@ Public Class FuelCalc
                     Case Is > 7
                         Return 4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 86 To 88
                 Select Case xDispersionIndex
@@ -548,7 +548,7 @@ Public Class FuelCalc
                     Case Is > 13
                         Return 4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 89 To 91
                 Select Case xDispersionIndex
@@ -561,7 +561,7 @@ Public Class FuelCalc
                     Case Is > 17
                         Return 4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 92 To 94
                 Select Case xDispersionIndex
@@ -576,7 +576,7 @@ Public Class FuelCalc
                     Case Is > 26
                         Return 4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case 95 To 97
                 Select Case xDispersionIndex
@@ -593,7 +593,7 @@ Public Class FuelCalc
                     Case Is > 26
                         Return 4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case Is > 97
                 Select Case xDispersionIndex
@@ -610,7 +610,7 @@ Public Class FuelCalc
                     Case Is > 26
                         Return 4
                     Case Else
-                        Return 0
+                        Exit Select
                 End Select
             Case Else
                 Return 0
