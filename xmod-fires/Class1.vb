@@ -127,7 +127,7 @@ Public Class Class1
         ElseIf cnt.Contains("Howard") Or cnt.Contains("Little River") Or cnt.Contains("Montgomery") Or cnt.Contains("Pike") Or cnt.Contains("Polk") Or cnt.Contains("Scott") Or cnt.Contains("Sevier") Or cnt.Contains("Yell") Then
             Return 2
         ElseIf cnt.Contains("Arkansas") Or cnt.Contains("Clay") Or cnt.Contains("Craighead") Or cnt.Contains("Crittenden") Or cnt.Contains("Cross") Or cnt.Contains("Greene") Or cnt.Contains("Jackson") Or cnt.Contains("Lee") Or cnt.Contains("Lonoke") Or cnt.Contains("Mississippi") Or cnt.Contains("Monroe") Or cnt.Contains("Phillips") Or cnt.Contains("Poinsett") Or cnt.Contains("Prairie") Or cnt.Contains("St Francis") Or cnt.Contains("Woodruff") Then
-            Return 3
+            Return 1
         ElseIf cnt.Contains("Columbia") Or cnt.Contains("Hempstead") Or cnt.Contains("Lafayette") Or cnt.Contains("Miller") Or cnt.Contains("Nevada") Or cnt.Contains("Ouachita") Or cnt.Contains("Union") Then
             Return 4
         ElseIf cnt.Contains("Clark") Or cnt.Contains("Dallas") Or cnt.Contains("Garland") Or cnt.Contains("Grant") Or cnt.Contains("Hot Spring") Or cnt.Contains("Saline") Then
@@ -621,33 +621,6 @@ End Class
 
 
 Public Class BETA
-    Public Function cypt()
-
-        Dim a1, a2 As Integer
-        Dim va, vb, vc, vd, ve As Integer
-        Do Until Val(va) + Val(vb) + Val(vc) + Val(vd) + Val(ve) = 10
-            va = CInt(Int((9 * Rnd()) + 1))
-            vb = CInt(Int((9 * Rnd()) + 1))
-            vc = CInt(Int((9 * Rnd()) + 1))
-            vd = CInt(Int((9 * Rnd()) + 1))
-            ve = CInt(Int((9 * Rnd()) + 1))
-
-            a1 = va & vb & vc & vd & ve
-        Loop
-
-        Dim v1, v2, v3, v4, v5 As Integer
-        Do Until Val(v1) + Val(v2) + Val(v3) + Val(v4) + Val(v5) = 15
-            v1 = CInt(Int((9 * Rnd()) + 1))
-            v2 = CInt(Int((9 * Rnd()) + 1))
-            v3 = CInt(Int((9 * Rnd()) + 1))
-            v4 = CInt(Int((9 * Rnd()) + 1))
-            v5 = CInt(Int((9 * Rnd()) + 1))
-
-            a2 = v1 & v2 & v3 & v4 & v5
-        Loop
-
-        Return a1 & "-" & a2 & "-" & grs(5)
-    End Function
 
     Public Function grs(ByRef length As Integer) As String
         Randomize()
@@ -658,23 +631,6 @@ Public Class BETA
             grs = grs & Mid(ac, Int(Rnd() * Len(ac) + 1), 1)
         Next
     End Function
-
-
-    Public Function Dcypt(rkey As String)
-        Dim total As Integer
-        Dim num() As String
-        num = Split(rkey, "-")
-        total = 0
-        For Each n In num
-            total = total + Val(num)
-        Next
-        Return total
-    End Function
-
-
-
-
-
 
 
 End Class
