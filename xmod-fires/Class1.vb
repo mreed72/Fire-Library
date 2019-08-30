@@ -11,28 +11,47 @@ Imports System.Windows.Forms
 Public Class Class1
 
     ''' <summary>
-    ''' Check Log File Locations
+    ''' Check directory locations for log file
     ''' </summary>
-    ''' <param name="DirName">STRING: the directory location.</param>
-    ''' <returns>NA</returns>
-    Public Function ChkLocations(DirName As String)
-        Dim f As Boolean
-        f = My.Computer.FileSystem.DirectoryExists(DirName)
-        If f = False Then
-            My.Computer.FileSystem.CreateDirectory(DirName)
-            My.Computer.FileSystem.WriteAllText(DirName & "\elog.txt", "", False)
-            My.Computer.FileSystem.WriteAllText(DirName & "\slog.txt", "", False)
-        End If
+    ''' <param name="DirName">base directory location (ie: c:\logfile)</param>
+    ''' <returns>true or false</returns>
+    Public Function CheckLogDirectories(DirName As String) As Boolean
+        Try
+            Dim f As Boolean
+            f = My.Computer.FileSystem.DirectoryExists(DirName)
+            If f = False Then
+                My.Computer.FileSystem.CreateDirectory(DirName)
+                My.Computer.FileSystem.WriteAllText(DirName & "\elog.txt", "", False)
+                My.Computer.FileSystem.WriteAllText(DirName & "\slog.txt", "", False)
+                Return True
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
-        Dim e, s As Boolean
-        e = My.Computer.FileSystem.FileExists(DirName & "\elog.txt")
-        s = My.Computer.FileSystem.FileExists(DirName & "\slog.txt")
-        If e = False Then
-            My.Computer.FileSystem.WriteAllText(DirName & "\elog.txt", "", False)
-        End If
-        If s = False Then
-            My.Computer.FileSystem.WriteAllText(DirName & "\slog.txt", "", False)
-        End If
+    ''' <summary>
+    ''' Check log files
+    ''' </summary>
+    ''' <param name="DirName">base directory location (ie: c:\logfile)</param>
+    ''' <returns>true or false</returns>
+    Public Function CheckLogFiles(DirName As String) As Boolean
+        Try
+
+            Dim e, s As Boolean
+            e = My.Computer.FileSystem.FileExists(DirName & "\elog.txt")
+            s = My.Computer.FileSystem.FileExists(DirName & "\slog.txt")
+            If e = False Then
+                My.Computer.FileSystem.WriteAllText(DirName & "\elog.txt", "", False)
+            End If
+            If s = False Then
+                My.Computer.FileSystem.WriteAllText(DirName & "\slog.txt", "", False)
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+
     End Function
 
     ''' <summary>
@@ -620,17 +639,3 @@ Public Class FuelCalc
 End Class
 
 
-Public Class BETA
-
-    Public Function grs(ByRef length As Integer) As String
-        Randomize()
-        Dim ac As String
-        ac = "123456789"
-        Dim i As Integer
-        For i = 1 To length
-            grs = grs & Mid(ac, Int(Rnd() * Len(ac) + 1), 1)
-        Next
-    End Function
-
-
-End Class

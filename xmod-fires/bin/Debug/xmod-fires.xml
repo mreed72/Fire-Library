@@ -22,12 +22,19 @@ xmod-fires
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="M:xmod_fires.Class1.ChkLocations(System.String)">
+<member name="M:xmod_fires.Class1.CheckLogDirectories(System.String)">
  <summary>
- Check Log File Locations
+ Check directory locations for log file
  </summary>
- <param name="DirName">STRING: the directory location.</param>
- <returns>NA</returns>
+ <param name="DirName">base directory location (ie: c:\logfile)</param>
+ <returns>true or false</returns>
+</member>
+<member name="M:xmod_fires.Class1.CheckLogFiles(System.String)">
+ <summary>
+ Check log files
+ </summary>
+ <param name="DirName">base directory location (ie: c:\logfile)</param>
+ <returns>true or false</returns>
 </member>
 <member name="M:xmod_fires.Class1.grs(System.Int32@)">
  <summary>
