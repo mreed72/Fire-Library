@@ -2,7 +2,7 @@
 ' You may freely change, use and distribute this code under the following conditions:
 ' 1. You may NOT charge money for the use of this software or any software that uses this code.
 ' 2. You must keep this copyright information throughout the code.
-' **** © 2018 Scott Reed **** mreed1972@gmail.com ****
+' **** © 2018-2019 Scott Reed **** mreed1972@gmail.com ****
 
 
 
@@ -85,7 +85,7 @@ Public Class Class1
     End Function
 
     ''' <summary>
-    ''' Writes to log file.
+    ''' Writes to ERROR log file.
     ''' </summary>
     ''' <param name="code">Unique ID</param>
     ''' <param name="msg">Message</param>
@@ -217,6 +217,252 @@ Public Class Class1
         My.Computer.Registry.CurrentUser.CreateSubKey(subKey)
         My.Computer.Registry.SetValue("HKEY_CURRENT_USER\" & subKey, keySub, keyValue)
     End Function
+
+    ''' <summary>
+    ''' Calculate Available Fuels
+    ''' </summary>
+    ''' <param name="FLType">Fuel Type</param>
+    ''' <param name="FLLoad">Fuel Loading</param>
+    ''' <returns>DOUBLE: represent the available fuels.  Multiply this by the burn size to get the total tons for the burn.</returns>
+    Public Function GetAvailableFuels(ByVal FLType As String, ByVal FLLoad As String)
+        Select Case FLType
+            Case "Shortleaf Pine with Oak"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 3.0
+                    Case Is = "Moderate"
+                        Return 4.0
+                    Case Is = "Heavy"
+                        Return 4.4
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Shortleaf Pine Regeneration"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 2.6
+                    Case Is = "Moderate"
+                        Return 3.8
+                    Case Is = "Heavy"
+                        Return 5.1
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Loblolly Pine with Oak"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 6.4
+                    Case Is = "Moderate"
+                        Return 6.8
+                    Case Is = "Heavy"
+                        Return 7.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Loblolly Pine Regeneration"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 4.4
+                    Case Is = "Moderate"
+                        Return 7.6
+                    Case Is = "Heavy"
+                        Return 8.5
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Hardwood Leaf Litter"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 0.8
+                    Case Is = "Moderate"
+                        Return 1.5
+                    Case Is = "Heavy"
+                        Return 2.5
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Grass or Brush"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 2.0
+                    Case Is = "Moderate"
+                        Return 3.0
+                    Case Is = "Heavy"
+                        Return 5.0
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Dispersed Slash"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 4.0
+                    Case Is = "Moderate"
+                        Return 6.0
+                    Case Is = "Heavy"
+                        Return 8.0
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Piled Debris"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 5.0
+                    Case Is = "Moderate"
+                        Return 7.5
+                    Case Is = "Heavy"
+                        Return 10.0
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Shortleaf Loblolly with Grass"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 1.5
+                    Case Is = "Moderate"
+                        Return 3.8
+                    Case Is = "Heavy"
+                        Return 5.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Corn"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 3.1
+                    Case Is = "Moderate"
+                        Return 4.7
+                    Case Is = "Heavy"
+                        Return 6.2
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Cotton"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 0.8
+                    Case Is = "Moderate"
+                        Return 1.1
+                    Case Is = "Heavy"
+                        Return 1.5
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Rice"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 2.5
+                    Case Is = "Moderate"
+                        Return 3.7
+                    Case Is = "Heavy"
+                        Return 4.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Soybean"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 2.9
+                    Case Is = "Moderate"
+                        Return 4.3
+                    Case Is = "Heavy"
+                        Return 5.7
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Wheat"
+                Select Case FLLoad
+                    Case Is = "Low"
+                        Return 0.9
+                    Case Is = "Moderate"
+                        Return 1.4
+                    Case Is = "Heavy"
+                        Return 1.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case Else
+                Exit Select
+        End Select
+    End Function
+
+    ''' <summary>
+    ''' Smoke Calculation base function
+    ''' </summary>
+    ''' <param name="xCatDay">Category Day (must be between 1 - 5) (INTEGER)</param>
+    ''' <param name="xDistance">Distance (in miles) to the nearest smoke sensitive target (DOUBLE)</param>
+    ''' <returns>DOUBLE:  compare this with the total tons to determine if the burn will exceed guidelines.</returns>
+    Public Function SmokeCalcFunction(ByRef xCatDay As Integer, ByRef xDistance As Double)
+        Select Case xCatDay
+            Case 1
+                Return 0
+            Case 2
+                Select Case xDistance
+                    Case 0 To 0.19
+                        Return 0
+                    Case 0.2 To 4.9
+                        Return 488
+                    Case 5 To 9.9
+                        Return 1000
+                    Case 10 To 19.9
+                        Return 1840
+                    Case > 20
+                        Return 2880
+                    Case Else
+                        Exit Select
+                End Select
+            Case 3
+                Select Case xDistance
+                    Case 0 To 0.19
+                        Return 0
+                    Case 0.2 To 4.9
+                        Return 560
+                    Case 5 To 9.9
+                        Return 1200
+                    Case 10 To 19.9
+                        Return 2240
+                    Case > 20
+                        Return 3280
+                    Case Else
+                        Exit Select
+                End Select
+            Case 4
+                Select Case xDistance
+                    Case 0 To 0.19
+                        Return 0
+                    Case 0.2 To 4.9
+                        Return 720
+                    Case 5 To 9.9
+                        Return 1840
+                    Case 10 To 19.9
+                        Return 4200
+                    Case > 20
+                        Return 6400
+                    Case Else
+                        Exit Select
+                End Select
+            Case 5
+                Select Case xDistance
+                    Case 0 To 0.19
+                        Return 0
+                    Case 0.2 To 4.9
+                        Return 1280
+                    Case 5 To 9.9
+                        Return 3200
+                    Case 10 To 19.9
+                        Return 7200
+                    Case > 20
+                        Return 11600
+                    Case Else
+                        Exit Select
+                End Select
+            Case Else
+                Exit Select
+        End Select
+    End Function
+
+
+
+
 
 End Class
 
