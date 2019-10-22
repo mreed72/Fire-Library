@@ -405,7 +405,7 @@ Public Class Class1
                         Return 1000
                     Case 10 To 19.9
                         Return 1840
-                    Case > 20
+                    Case > 19.9
                         Return 2880
                     Case Else
                         Exit Select
@@ -420,7 +420,7 @@ Public Class Class1
                         Return 1200
                     Case 10 To 19.9
                         Return 2240
-                    Case > 20
+                    Case > 19.9
                         Return 3280
                     Case Else
                         Exit Select
@@ -435,7 +435,7 @@ Public Class Class1
                         Return 1840
                     Case 10 To 19.9
                         Return 4200
-                    Case > 20
+                    Case > 19.9
                         Return 6400
                     Case Else
                         Exit Select
@@ -450,7 +450,7 @@ Public Class Class1
                         Return 3200
                     Case 10 To 19.9
                         Return 7200
-                    Case > 20
+                    Case > 19.9
                         Return 11600
                     Case Else
                         Exit Select
@@ -490,7 +490,7 @@ Public Class FuelCalc
                         Return 1000
                     Case 10 To 19.9
                         Return 1840
-                    Case > 20
+                    Case > 19.9
                         Return 2880
                     Case Else
                         Exit Select
@@ -505,7 +505,7 @@ Public Class FuelCalc
                         Return 1200
                     Case 10 To 19.9
                         Return 2240
-                    Case > 20
+                    Case > 19.9
                         Return 3280
                     Case Else
                         Exit Select
@@ -520,7 +520,7 @@ Public Class FuelCalc
                         Return 1840
                     Case 10 To 19.9
                         Return 4200
-                    Case > 20
+                    Case > 19.9
                         Return 6400
                     Case Else
                         Exit Select
@@ -535,7 +535,7 @@ Public Class FuelCalc
                         Return 3200
                     Case 10 To 19.9
                         Return 7200
-                    Case > 20
+                    Case > 19.9
                         Return 11600
                     Case Else
                         Exit Select
