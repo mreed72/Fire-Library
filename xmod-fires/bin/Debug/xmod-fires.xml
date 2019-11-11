@@ -98,13 +98,14 @@ xmod-fires
  <param name="keyValue"></param>
  <returns></returns>
 </member>
-<member name="M:xmod_fires.Class1.GetAvailableFuels(System.String,System.String)">
+<member name="M:xmod_fires.Class1.GetAvailableFuels(System.String,System.String,System.Int32)">
  <summary>
- Calculate Available Fuels
+ Calculate Available Fuels and Total Tons.
  </summary>
- <param name="FLType">Fuel Type</param>
- <param name="FLLoad">Fuel Loading</param>
- <returns>DOUBLE: represent the available fuels.  Multiply this by the burn size to get the total tons for the burn.</returns>
+ <param name="FType">Fuel Type</param>
+ <param name="FLoad">Fuel Load</param>
+ <param name="BSize">Burn Size</param>
+ <returns></returns>
 </member>
 <member name="M:xmod_fires.Class1.SmokeCalcFunction(System.Int32@,System.Double@)">
  <summary>
@@ -113,30 +114,6 @@ xmod-fires
  <param name="xCatDay">Category Day (must be between 1 - 5) (INTEGER)</param>
  <param name="xDistance">Distance (in miles) to the nearest smoke sensitive target (DOUBLE)</param>
  <returns>DOUBLE:  compare this with the total tons to determine if the burn will exceed guidelines.</returns>
-</member>
-<member name="M:xmod_fires.FuelCalc.smpCalc(System.Int32@,System.Double@)">
- <summary>
- Main Smoke Guidelines Calculation Code
- </summary>
- <param name="xCatDay">INTEGER: 1-5, Category Day</param>
- <param name="xDistance">DOUBLE: Distance to Target</param>
- <returns>INTEGER: represents the total tons allowed for an airshed.</returns>
-</member>
-<member name="M:xmod_fires.FuelCalc.GetAvFuels(System.String,System.String)">
- <summary>
- Available Fuels
- </summary>
- <param name="cTypx">Fuel Type</param>
- <param name="cLoad">Fuel Load</param>
- <returns>DOUBLE: value represents the available fuels for a burn.</returns>
-</member>
-<member name="M:xmod_fires.FuelCalc.LVORI(System.Int32,System.Int32)">
- <summary>
- Low Visibility Occurence Risk Index
- </summary>
- <param name="xRelativeHumidity">Relative Humidity</param>
- <param name="xDispersionIndex">Dispersion Index</param>
- <returns>INTEGER: 1-10 that depicts the LVORI value.</returns>
 </member>
 </members>
 </doc>

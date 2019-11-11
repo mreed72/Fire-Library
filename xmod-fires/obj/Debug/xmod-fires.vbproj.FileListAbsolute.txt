@@ -7,4 +7,3 @@ C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.vbproj
 C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.dll
 C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.xml
 C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.pdb
-C:\GITHUB REPOS\Fire Library\Fire-Library\xmod-fires\obj\Debug\xmod-fires.vbprojAssemblyReference.cache
