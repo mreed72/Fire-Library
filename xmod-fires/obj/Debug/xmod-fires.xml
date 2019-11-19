@@ -78,8 +78,8 @@ xmod-fires
  <summary>
  State Cause Codes converted to Federal Cause Codes
  </summary>
- <param name="StateCode">State Cause Code INTEGER</param>
- <returns>Federal Cause Code INTEGER</returns>
+ <param name="StateCode">INTEGER: State Cause Code </param>
+ <returns>INTEGER: Federal Cause Code </returns>
 </member>
 <member name="M:xmod_fires.Class1.GetMyKey(System.String,System.String)">
  <summary>
@@ -98,22 +98,29 @@ xmod-fires
  <param name="keyValue"></param>
  <returns></returns>
 </member>
-<member name="M:xmod_fires.Class1.GetAvailableFuels(System.String,System.String,System.Int32)">
+<member name="M:xmod_fires.Class1.GetTotalTons(System.String,System.String,System.Int32)">
  <summary>
  Calculate Available Fuels and Total Tons.
  </summary>
- <param name="FType">Fuel Type</param>
- <param name="FLoad">Fuel Load</param>
- <param name="BSize">Burn Size</param>
- <returns></returns>
+ <param name="FType">STRING: Fuel Type</param>
+ <param name="FLoad">STRING: Fuel Load</param>
+ <param name="BSize">INTEGER: Burn Size</param>
+ <returns>INTEGER:  Total Tons</returns>
 </member>
 <member name="M:xmod_fires.Class1.SmokeCalcFunction(System.Int32@,System.Double@)">
  <summary>
- Smoke Calculation base function
+ Smoke Calculation Main Function (20 Mile Distance Fixed)
  </summary>
- <param name="xCatDay">Category Day (must be between 1 - 5) (INTEGER)</param>
- <param name="xDistance">Distance (in miles) to the nearest smoke sensitive target (DOUBLE)</param>
+ <param name="xCatDay">INTEGER: Category Day (must be between 1 - 5)</param>
+ <param name="xDistance">DOUBLE: Distance (in miles) to the nearest smoke sensitive target.</param>
  <returns>DOUBLE:  compare this with the total tons to determine if the burn will exceed guidelines.</returns>
+</member>
+<member name="M:xmod_fires.Class1.cDir(System.Double@)">
+ <summary>
+ Cardinal Direction Convertor
+ </summary>
+ <param name="deg">DOUBLE: degree to convert</param>
+ <returns>STRING: cardinal direction</returns>
 </member>
 </members>
 </doc>

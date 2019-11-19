@@ -164,8 +164,8 @@ Public Class Class1
     ''' <summary>
     ''' State Cause Codes converted to Federal Cause Codes
     ''' </summary>
-    ''' <param name="StateCode">State Cause Code INTEGER</param>
-    ''' <returns>Federal Cause Code INTEGER</returns>
+    ''' <param name="StateCode">INTEGER: State Cause Code </param>
+    ''' <returns>INTEGER: Federal Cause Code </returns>
     Public Function CauseCodeCrossWalk(StateCode As Integer) As Integer
         Select Case StateCode
             Case 1
@@ -218,11 +218,11 @@ Public Class Class1
     ''' <summary>
     ''' Calculate Available Fuels and Total Tons.
     ''' </summary>
-    ''' <param name="FType">Fuel Type</param>
-    ''' <param name="FLoad">Fuel Load</param>
-    ''' <param name="BSize">Burn Size</param>
-    ''' <returns></returns>
-    Public Function GetAvailableFuels(ByVal FType As String, ByVal FLoad As String, BSize As Integer)
+    ''' <param name="FType">STRING: Fuel Type</param>
+    ''' <param name="FLoad">STRING: Fuel Load</param>
+    ''' <param name="BSize">INTEGER: Burn Size</param>
+    ''' <returns>INTEGER:  Total Tons</returns>
+    Public Function GetTotalTons(ByVal FType As String, ByVal FLoad As String, BSize As Integer)
         Dim FN As Integer
 
         Select Case FType
@@ -389,10 +389,10 @@ Public Class Class1
     End Function
 
     ''' <summary>
-    ''' Smoke Calculation base function
+    ''' Smoke Calculation Main Function (20 Mile Distance Fixed)
     ''' </summary>
-    ''' <param name="xCatDay">Category Day (must be between 1 - 5) (INTEGER)</param>
-    ''' <param name="xDistance">Distance (in miles) to the nearest smoke sensitive target (DOUBLE)</param>
+    ''' <param name="xCatDay">INTEGER: Category Day (must be between 1 - 5)</param>
+    ''' <param name="xDistance">DOUBLE: Distance (in miles) to the nearest smoke sensitive target.</param>
     ''' <returns>DOUBLE:  compare this with the total tons to determine if the burn will exceed guidelines.</returns>
     Public Function SmokeCalcFunction(ByRef xCatDay As Integer, ByRef xDistance As Double)
         Select Case xCatDay
@@ -460,6 +460,51 @@ Public Class Class1
                 End Select
             Case Else
                 Exit Select
+        End Select
+    End Function
+
+    ''' <summary>
+    ''' Cardinal Direction Convertor
+    ''' </summary>
+    ''' <param name="deg">DOUBLE: degree to convert</param>
+    ''' <returns>STRING: cardinal direction</returns>
+    Function cDir(ByRef deg As Double) As String
+
+        Select Case deg
+            Case 348.75 To 360
+                Return "N"
+            Case 11.25 To 33.75
+                Return "NNE"
+            Case 33.75 To 56.25
+                Return "NE"
+            Case 56.25 To 78.75
+                Return "ENE"
+            Case 78.75 To 101.25
+                Return "E"
+            Case 101.25 To 123.75
+                Return "ESE"
+            Case 123.75 To 146.25
+                Return "SE"
+            Case 146.25 To 168.75
+                Return "SSE"
+            Case 168.75 To 191.25
+                Return "S"
+            Case 191.25 To 213.75
+                Return "SSW"
+            Case 213.75 To 236.25
+                Return "SW"
+            Case 236.25 To 258.75
+                Return "WSW"
+            Case 258.75 To 281.25
+                Return "W"
+            Case 281.25 To 303.75
+                Return "WNW"
+            Case 303.75 To 326.25
+                Return "NW"
+            Case 326.25 To 348.75
+                Return "NNW"
+            Case 0 To 11.25
+                Return "N"
         End Select
     End Function
 
