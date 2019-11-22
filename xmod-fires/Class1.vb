@@ -131,37 +131,6 @@ Public Class Class1
     End Function
 
     ''' <summary>
-    ''' Converts county name to AFC district
-    ''' </summary>
-    ''' <param name="StringLocation">Location of the string to search for county name(ex. textbox.text contains "Cleburne")</param>
-    ''' <returns>INTEGER that represents the AFC district 1-8  if zero(0) then error</returns>
-    Public Function CountyToDistrict(StringLocation As String)
-
-        Dim cnt As String = StringLocation
-
-        If cnt.Contains("Ashley") Or cnt.Contains("Bradley") Or cnt.Contains("Calhoun") Or cnt.Contains("Chicot") Or cnt.Contains("Cleveland") Or cnt.Contains("Desha") Or cnt.Contains("Drew") Or cnt.Contains("Jefferson") Or cnt.Contains("Lincoln") Then
-            Return 1
-        ElseIf cnt.Contains("Howard") Or cnt.Contains("Little River") Or cnt.Contains("Montgomery") Or cnt.Contains("Pike") Or cnt.Contains("Polk") Or cnt.Contains("Scott") Or cnt.Contains("Sevier") Or cnt.Contains("Yell") Then
-            Return 2
-        ElseIf cnt.Contains("Arkansas") Or cnt.Contains("Clay") Or cnt.Contains("Craighead") Or cnt.Contains("Crittenden") Or cnt.Contains("Cross") Or cnt.Contains("Greene") Or cnt.Contains("Jackson") Or cnt.Contains("Lee") Or cnt.Contains("Lonoke") Or cnt.Contains("Mississippi") Or cnt.Contains("Monroe") Or cnt.Contains("Phillips") Or cnt.Contains("Poinsett") Or cnt.Contains("Prairie") Or cnt.Contains("St Francis") Or cnt.Contains("Woodruff") Then
-            Return 1
-        ElseIf cnt.Contains("Columbia") Or cnt.Contains("Hempstead") Or cnt.Contains("Lafayette") Or cnt.Contains("Miller") Or cnt.Contains("Nevada") Or cnt.Contains("Ouachita") Or cnt.Contains("Union") Then
-            Return 4
-        ElseIf cnt.Contains("Clark") Or cnt.Contains("Dallas") Or cnt.Contains("Garland") Or cnt.Contains("Grant") Or cnt.Contains("Hot Spring") Or cnt.Contains("Saline") Then
-            Return 5
-        ElseIf cnt.Contains("Benton") Or cnt.Contains("Boone") Or cnt.Contains("Carroll") Or cnt.Contains("Crawford") Or cnt.Contains("Franklin") Or cnt.Contains("Johnson") Or cnt.Contains("Logan") Or cnt.Contains("Madison") Or cnt.Contains("Newton") Or cnt.Contains("Pope") Or cnt.Contains("Sebastian") Or cnt.Contains("Washington") Then
-            Return 6
-        ElseIf cnt.Contains("Cleburne") Or cnt.Contains("Conway") Or cnt.Contains("Faulkner") Or cnt.Contains("Perry") Or cnt.Contains("Pulaski") Or cnt.Contains("Van Buren") Or cnt.Contains("White") Then
-            Return 7
-        ElseIf cnt.Contains("Baxter") Or cnt.Contains("Fulton") Or cnt.Contains("Independence") Or cnt.Contains("Izard") Or cnt.Contains("Lawrence") Or cnt.Contains("Marion") Or cnt.Contains("Randolph") Or cnt.Contains("Searcy") Or cnt.Contains("Sharp") Or cnt.Contains("Stone") Then
-            Return 8
-        Else
-            Return 0
-        End If
-
-    End Function
-
-    ''' <summary>
     ''' State Cause Codes converted to Federal Cause Codes
     ''' </summary>
     ''' <param name="StateCode">INTEGER: State Cause Code </param>
@@ -386,6 +355,173 @@ Public Class Class1
 
         Return FN
 
+    End Function
+
+    ''' <summary>
+    ''' Calculate Available Fuels ONLY
+    ''' </summary>
+    ''' <param name="cTypx">STRING: Fuel Type</param>
+    ''' <param name="cLoad">STRING: Fuel Load</param>
+    ''' <returns>INTEGER: Available Fuels Value</returns>
+    Public Function GetAVFUELS(ByVal cTypx As String, ByVal cLoad As String)
+        Select Case cTypx
+            Case "Shortleaf Pine with Oak"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 3.0
+                    Case Is = "Moderate"
+                        Return 4.0
+                    Case Is = "Heavy"
+                        Return 4.4
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Shortleaf Pine Regeneration"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 2.6
+                    Case Is = "Moderate"
+                        Return 3.8
+                    Case Is = "Heavy"
+                        Return 5.1
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Loblolly Pine with Oak"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 6.4
+                    Case Is = "Moderate"
+                        Return 6.8
+                    Case Is = "Heavy"
+                        Return 7.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Loblolly Pine Regeneration"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 4.4
+                    Case Is = "Moderate"
+                        Return 7.6
+                    Case Is = "Heavy"
+                        Return 8.5
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Hardwood Leaf Litter"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 0.8
+                    Case Is = "Moderate"
+                        Return 1.5
+                    Case Is = "Heavy"
+                        Return 2.5
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Grass or Brush"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 2.0
+                    Case Is = "Moderate"
+                        Return 3.0
+                    Case Is = "Heavy"
+                        Return 5.0
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Dispersed Slash"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 4.0
+                    Case Is = "Moderate"
+                        Return 6.0
+                    Case Is = "Heavy"
+                        Return 8.0
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Piled Debris"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 5.0
+                    Case Is = "Moderate"
+                        Return 7.5
+                    Case Is = "Heavy"
+                        Return 10.0
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Shortleaf Loblolly with Grass"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 1.5
+                    Case Is = "Moderate"
+                        Return 3.8
+                    Case Is = "Heavy"
+                        Return 5.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Corn"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 3.1
+                    Case Is = "Moderate"
+                        Return 4.7
+                    Case Is = "Heavy"
+                        Return 6.2
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Cotton"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 0.8
+                    Case Is = "Moderate"
+                        Return 1.1
+                    Case Is = "Heavy"
+                        Return 1.5
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Rice"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 2.5
+                    Case Is = "Moderate"
+                        Return 3.7
+                    Case Is = "Heavy"
+                        Return 4.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Soybean"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 2.9
+                    Case Is = "Moderate"
+                        Return 4.3
+                    Case Is = "Heavy"
+                        Return 5.7
+                    Case Else
+                        Exit Select
+                End Select
+            Case "Wheat"
+                Select Case cLoad
+                    Case Is = "Low"
+                        Return 0.9
+                    Case Is = "Moderate"
+                        Return 1.4
+                    Case Is = "Heavy"
+                        Return 1.9
+                    Case Else
+                        Exit Select
+                End Select
+            Case Else
+                Exit Select
+        End Select
     End Function
 
     ''' <summary>
