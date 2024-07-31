@@ -195,7 +195,7 @@ Public Class Class1
         Dim FN As Integer
 
         Select Case FType
-            Case "Shortleaf Pine with Oak"
+            Case "1-Shortleaf Pine with Oak"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 3.0
@@ -206,7 +206,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Shortleaf Pine Regeneration"
+            Case "2-Shortleaf Pine Regeneration"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 2.6
@@ -217,7 +217,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Loblolly Pine with Oak"
+            Case "3-Loblolly Pine with Oak"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 6.4
@@ -228,7 +228,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Loblolly Pine Regeneration"
+            Case "4-Loblolly Pine Regeneration"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 4.4
@@ -239,7 +239,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Hardwood Leaf Litter"
+            Case "5-Hardwood Leaf Litter"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 0.8
@@ -250,7 +250,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Grass or Brush"
+            Case "6-Grass or Brush"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 2.0
@@ -261,7 +261,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Dispersed Slash"
+            Case "7-Dispersed Slash"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 4.0
@@ -272,7 +272,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Piled Debris"
+            Case "8-Piled Debris"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 5.0
@@ -283,7 +283,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Shortleaf Loblolly with Grass"
+            Case "9-Shortleaf Loblolly with Grass"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 1.5
@@ -294,7 +294,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Corn"
+            Case "10-Corn"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 3.1
@@ -305,7 +305,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Cotton"
+            Case "11-Cotton"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 0.8
@@ -316,7 +316,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Rice"
+            Case "12-Rice"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 2.5
@@ -327,7 +327,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Soybean"
+            Case "13-Soybean"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 2.9
@@ -338,7 +338,7 @@ Public Class Class1
                     Case Else
                         FN = 0
                 End Select
-            Case "Wheat"
+            Case "14-Wheat"
                 Select Case FLoad
                     Case Is = "Low"
                         FN = BSize * 0.9
@@ -365,7 +365,7 @@ Public Class Class1
     ''' <returns>INTEGER: Available Fuels Value</returns>
     Public Function GetAVFUELS(ByVal cTypx As String, ByVal cLoad As String)
         Select Case cTypx
-            Case "Shortleaf Pine with Oak"
+            Case "1-Shortleaf Pine with Oak"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 3.0
@@ -376,7 +376,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Shortleaf Pine Regeneration"
+            Case "2-Shortleaf Pine Regeneration"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.6
@@ -387,7 +387,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Loblolly Pine with Oak"
+            Case "3-Loblolly Pine with Oak"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 6.4
@@ -398,7 +398,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Loblolly Pine Regeneration"
+            Case "4-Loblolly Pine Regeneration"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 4.4
@@ -409,7 +409,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Hardwood Leaf Litter"
+            Case "5-Hardwood Leaf Litter"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 0.8
@@ -420,7 +420,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Grass or Brush"
+            Case "6-Grass or Brush"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.0
@@ -431,7 +431,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Dispersed Slash"
+            Case "7-Dispersed Slash"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 4.0
@@ -442,7 +442,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Piled Debris"
+            Case "8-Piled Debris"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 5.0
@@ -453,7 +453,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Shortleaf Loblolly with Grass"
+            Case "9-Shortleaf Loblolly with Grass"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 1.5
@@ -464,7 +464,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Corn"
+            Case "10-Corn"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 3.1
@@ -475,7 +475,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Cotton"
+            Case "11-Cotton"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 0.8
@@ -486,7 +486,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Rice"
+            Case "12-Rice"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.5
@@ -497,7 +497,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Soybean"
+            Case "13-Soybean"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 2.9
@@ -508,7 +508,7 @@ Public Class Class1
                     Case Else
                         Exit Select
                 End Select
-            Case "Wheat"
+            Case "14-Wheat"
                 Select Case cLoad
                     Case Is = "Low"
                         Return 0.9
