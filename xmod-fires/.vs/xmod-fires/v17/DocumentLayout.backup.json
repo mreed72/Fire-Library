@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mreed\\OneDrive - State of Arkansas\\Documents\\GitHub\\Fire-Library\\xmod-fires\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{286B115C-C051-46D2-89C9-C2883BBA8F42}|xmod-fires.vbproj|c:\\users\\mreed\\onedrive - state of arkansas\\documents\\github\\fire-library\\xmod-fires\\class1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{286B115C-C051-46D2-89C9-C2883BBA8F42}|xmod-fires.vbproj|solutionrelative:class1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.vb",
+              "DocumentMoniker": "C:\\Users\\mreed\\OneDrive - State of Arkansas\\Documents\\GitHub\\Fire-Library\\xmod-fires\\Class1.vb",
+              "RelativeDocumentMoniker": "Class1.vb",
+              "ToolTip": "C:\\Users\\mreed\\OneDrive - State of Arkansas\\Documents\\GitHub\\Fire-Library\\xmod-fires\\Class1.vb",
+              "RelativeToolTip": "Class1.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-04T15:45:35.461Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 ' You may freely change, use and distribute this code under the following conditions:
 ' 1. You may NOT charge money for the use of this software or any software that uses this code.
 ' 2. You must keep this copyright information throughout the code.
-' **** © 2018-2019 Scott Reed **** mreed1972@gmail.com ****
+' **** © 2018-2025 Scott Reed **** mreed1972@gmail.com ****
 
 Imports System.Windows.Forms
 

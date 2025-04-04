@@ -67,13 +67,6 @@ xmod-fires
  <param name="FileLocation">Location of the text file</param>
  <returns>random word from a text file.</returns>
 </member>
-<member name="M:xmod_fires.Class1.CountyToDistrict(System.String)">
- <summary>
- Converts county name to AFC district
- </summary>
- <param name="StringLocation">Location of the string to search for county name(ex. textbox.text contains "Cleburne")</param>
- <returns>INTEGER that represents the AFC district 1-8  if zero(0) then error</returns>
-</member>
 <member name="M:xmod_fires.Class1.CauseCodeCrossWalk(System.Int32)">
  <summary>
  State Cause Codes converted to Federal Cause Codes
@@ -106,6 +99,14 @@ xmod-fires
  <param name="FLoad">STRING: Fuel Load</param>
  <param name="BSize">INTEGER: Burn Size</param>
  <returns>INTEGER:  Total Tons</returns>
+</member>
+<member name="M:xmod_fires.Class1.GetAVFUELS(System.String,System.String)">
+ <summary>
+ Calculate Available Fuels ONLY
+ </summary>
+ <param name="cTypx">STRING: Fuel Type</param>
+ <param name="cLoad">STRING: Fuel Load</param>
+ <returns>INTEGER: Available Fuels Value</returns>
 </member>
 <member name="M:xmod_fires.Class1.SmokeCalcFunction(System.Int32@,System.Double@)">
  <summary>
